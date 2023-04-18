@@ -2,7 +2,8 @@ import React from 'react'
 import Button from './UI/Button'
 import { useState } from 'react'
 import Alert from './Alert'
-const Form = () => {
+
+const Form = (props) => {
   const [username, setUsername] = useState('')
   const [age, setAge] = useState('')
   const [isValid, setIsValid] = useState(true)
@@ -34,6 +35,12 @@ const Form = () => {
       setMsg('Age field: Enter Valid Age.')
       return
     }
+    const obj = {
+      id: Math.random(),
+      username: username,
+      age: age,
+    }
+    props.onGetData(obj)
     setIsValid(true)
   }
 
