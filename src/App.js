@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Form from './Components/Form'
 import List from './Components/List'
+import Wrapper from './Components/Helpers/Wrapper'
 
 function App() {
   const [listData, setListData] = useState([])
@@ -15,10 +16,10 @@ function App() {
   }
 
   return (
-    <div>
+    <Wrapper>
       <Form onGetData={getDataHandler} />
       <List ListData={listData} />
-    </div>
+    </Wrapper>
   )
 }
 

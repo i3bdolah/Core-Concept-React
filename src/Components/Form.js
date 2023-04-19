@@ -2,6 +2,7 @@ import React from 'react'
 import Button from './UI/Button'
 import { useState } from 'react'
 import Alert from './Alert'
+import Wrapper from './Helpers/Wrapper'
 
 const Form = (props) => {
   const [username, setUsername] = useState('')
@@ -50,7 +51,7 @@ const Form = (props) => {
 
   // I should set the isValid to false the CLOSE btn clicked
   return (
-    <div>
+    <Wrapper>
       {isValid ? '' : <Alert msg={msg} onCloseAlert={closeAlertHandler} />}
       <div className="flex justify-center m-10 p-10 bg-orange-200 rounded-lg drop-shadow-lg">
         <form>
@@ -75,7 +76,7 @@ const Form = (props) => {
           </div>
         </form>
       </div>
-    </div>
+    </Wrapper>
   )
 }
 
